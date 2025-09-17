@@ -27,7 +27,7 @@ public class EmployeeServiceApplication {
 //	@Bean
 //	public WebClient webClient() { return WebClient.builder().build(); }
 
-	@FeignClient(url = "http://localhost:8080", value = "DEPARTMENT-SERVICE")
+	@FeignClient(name = "DEPARTMENT-SERVICE")
 	public interface DepartmentServiceAPIClient {
 		@GetMapping("api/departments/{departmentCode}")
 		DepartmentDto getDepartment(@PathVariable String departmentCode);
